@@ -23,7 +23,7 @@ Here:
 				tmp = array[i];
 				array[i] = array[i + 1];
 				array[i + 1] = tmp;
-				/* print_array(array, size); */
+				print_array(array, size);
 				goto Here;
 			}
 			else
