@@ -1,45 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "sort.h"
-
 /**
- * bubble_sort - uses the algorithm of bubble sort
- * to sort any array or list
+ * bubble_sort - Sorts an array of integers Bubble Sort
  *
- * @array: a pointer to the unsorted array
- * @size: size of the array
+ * @array: The array to be sorted.
+ * @size:  The number of elements in the array.
  */
 void bubble_sort(int *array, size_t size)
 {
-	int swapped = 1;
-	size_t i;
+	size_t i, j;
+	int swapped;
+	int tmp;
 
-	if (array == NULL || size < 2)
-		return;
-
-	while (swapped == 1)
+	for (i = 0; i < size - 1; i++)
 	{
 		swapped = 0;
-		for (i = 0; i < size - 1; i++)
+		for (j = 0; j < size - i - 1; j++)
 		{
-			if (array[i] > array[i + 1])
+			if (array[j] > array[j + 1])
 			{
-				_swab(array + i, array + i + 1);
+				tmp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = tmp;
 				swapped = 1;
 				print_array(array, size);
 			}
 		}
+		if (swapped == 0)
+		{
+			break;
+		}
 	}
-}
-
-/**
- * _swab - swabs two integer values
- * @a: a pointer to the first ineteger
- * @b: a pointer to the second integer
- */
-void _swab(int *a, int *b)
-{
-	int tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
 }
