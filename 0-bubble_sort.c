@@ -31,6 +31,11 @@ void bubble_sort(int *array, size_t size)
 	}
 }
 
+/**
+ * _swab - swabs two integer values
+ * @a: a pointer to the first ineteger
+ * @b: a pointer to the second integer
+ */
 void _swab(int *a, int *b)
 {
 	int tmp;
