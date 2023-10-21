@@ -22,7 +22,7 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[i] > array[i + 1])
 			{
-				swab(array + i, array + i + 1);
+				_swab(array + i, array + i + 1);
 				swapped = 1;
 				print_array(array, size);
 			}
@@ -31,7 +31,7 @@ void bubble_sort(int *array, size_t size)
 	}
 }
 
-void swab(int *a, int *b)
+void _swab(int *a, int *b)
 {
 	int tmp;
 
