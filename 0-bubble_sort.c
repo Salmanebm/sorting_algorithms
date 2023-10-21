@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * bubble_sort - uses the algorithm of bubble sort 
+ * bubble_sort - uses the algorithm of bubble sort
  * to sort any array or list
  *
  * @array: a pointer to the unsorted array
@@ -33,27 +33,4 @@ Here:
 			i++;
 		}
 	}
-}
-
-/**
- * swab - swabs to unordered integers
- *
- * @a: an int
- * @b: an int
- * 
- * Returns: 0 if swab happens, 1 otherwise
- */
-int swab(int a, int b)
-{
-	int tmp;
-
-	if (b < a)
-	{
-		tmp = a;
-		a = b;
-		b = tmp;
-		return (0);
-	}
-
-	return (1);
 }
