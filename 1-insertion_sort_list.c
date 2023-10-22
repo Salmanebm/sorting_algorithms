@@ -23,7 +23,7 @@ void insertion_sort_list(listint_t **list)
 		{
 			current->next = sorted;
 			sorted = current;
-			toprint = current;
+			print_list(sorted);
 		}
 		else
 		{
@@ -35,7 +35,7 @@ void insertion_sort_list(listint_t **list)
 			}
 			current->next = temp->next;
 			temp->next = current;
-			toprint = current->next;
+			print_list(sorted);
 		}
 			current = next;
 			print_list(toprint);
