@@ -13,6 +13,8 @@ void counting_sort(int *array, size_t size)
 	int j;
 	int *outputArr, *countArr;
 
+	if (!*array)
+		return;
 	for (i = 1; i < size; i++)
 	{
 		if (array[i] > M)
