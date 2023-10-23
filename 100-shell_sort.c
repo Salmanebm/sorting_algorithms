@@ -12,8 +12,6 @@ void shell_sort(int *array, size_t size)
 	size_t gap, i, j;
 	int tmp;
 	
-	if (!*array)
-		return;
 	gap = 4;
 	while (gap != 0)
 	{
