@@ -59,7 +59,7 @@ void recursive_sort(int *array, size_t size, int first, int last)
 {
 	int part;
 
-	if (right > left)
+	if (last > first)
 	{
 		part = partition(array, size, first, last);
 		recursive_sort(array, size, first, part - 1);
