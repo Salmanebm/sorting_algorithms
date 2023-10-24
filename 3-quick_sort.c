@@ -18,6 +18,7 @@ void swap(int *a, int *b)
  * partition - splits the array to smaller subarrays
  *
  * @arr: the main array
+ * @size: size of the array
  * @first: first index
  * @last: last index
  */
@@ -33,8 +34,8 @@ int partition(int *arr, size_t size, int first, int last)
 		{
 			if (more < less)
 			{
-					swap(arr + less, arr + more);
-					print_array(arr, size);
+				swap(arr + less, arr + more);
+				print_array(arr, size);
 			}
 			more++;
 		}
