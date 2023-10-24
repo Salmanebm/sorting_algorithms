@@ -1,69 +1,49 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
-
+/**
+ * merge_sort - Sorts an array of integers using merge sort.
+ * @array: Pointer to the array to be sorted.
+ * @size: Number of elements in the array.
+ */
 void merge_sort(int *array, size_t size)
-{	
-	size_t i;
-
+{	size_t i;
 	if (size > 1)
-	{
-		size_t mid = size / 2;
-		size_t left_size = mid;
-		size_t right_size = size - mid;
+	{	size_t mid = size / 2, left_size = mid, right_size = size - mid;
+		int *left, *right;
 
-		int *left;
-		int *right;
-		
 		left = (int *)malloc((left_size + 1) * sizeof(int));
-		if (left == NULL)
-			return;
 		for (i = 0; i < left_size; i++)
-		{
 			left[i] = array[i];
-		}
 		right = (int *)malloc((right_size + 1) * sizeof(int));
-		if (right == NULL)
-			return;
 		for (i = 0; i < right_size; i++)
-		{
 			right[i] = array[mid + i];
-		}
 		merge_sort(left, left_size);
 		merge_sort(right, right_size);
-		merge_rec(array, left, left_size, right, right_size);
-	}
-}
-void merge_rec(int *array, int *left, size_t left_size, int *right, size_t right_size)
-{
-	size_t i = 0, j = 0, k = 0;
-	
+		merge_rec(array, left, left_size, right, right_size);	}}
+/**
+ * merge_rec - Merge two subarrays into one sorted array recursively.
+ * @array: Pointer to the original array.
+ * @l: Pointer to the left subarray.
+ * @l_size: Size of the left subarray.
+ * @r: Pointer to the right subarray.
+ * @r_size: Size of the right subarray.
+ */
+void merge_rec(int *array, int *l, size_t l_size, int *r, size_t r_size)
+{	size_t i = 0, j = 0, k = 0;
 	printf("Merging...\n");
 	printf("[left]: ");
-	print_array(left, left_size);
+	print_array(l, l_size);
 	printf("[right]: ");
-	print_array(right, right_size);
-	
-	while (i < left_size && j < right_size)
+	print_array(r, r_size);
+	while (i < l_size && j < r_size)
 	{
-		if (left[i] <= right[j])
-		{
-			array[k++] = left[i++];
-		}
+		if (l[i] <= r[j])
+			array[k++] = l[i++];
 		else
-		{
-			array[k++] = right[j++];
-		}
-	}
-
-	while (i < left_size)
-	{
-		array[k++] = left[i++];
-	}
-	while (j < right_size)
-	{
-		array[k++] = right[j++];
-	}
+			array[k++] = r[j++];	}
+	while (i < l_size)
+		array[k++] = l[i++];
+	while (j < r_size)
+		array[k++] = r[j++];
 	printf("[Done]: ");
-	print_array(array, left_size + right_size);
-}
+	print_array(array, l_size + r_size);	}
