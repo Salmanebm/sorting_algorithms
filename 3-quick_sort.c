@@ -21,7 +21,8 @@ void swap(int *a, int *b)
  * @size: size of the array
  * @first: first index
  * @last: last index
- */
+ * Return: the index of the right position of pivot
+ * /
 int partition(int *arr, size_t size, int first, int last)
 {
 	int *pivot, more, less;
