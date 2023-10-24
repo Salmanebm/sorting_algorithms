@@ -1,6 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
+
+/**
+ * _swap - swaps two integer values
+ *
+ * @a: a pointer to int 1
+ * @b: a pointer ot int 2
+ */
+void _swap(int *a, int *b)
+{
+	int tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
 /**
  * bubble_sort - Sorts an array of integers Bubble Sort
  *
@@ -11,7 +27,6 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
 	int swapped;
-	int tmp;
 
 	if (array == NULL || size < 2)
 		return;
@@ -23,9 +38,7 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[j] > array[j + 1])
 			{
-				tmp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = tmp;
+				_swap(array + j, array + j + 1);
 				swapped = 1;
 				print_array(array, size);
 			}
