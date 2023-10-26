@@ -29,5 +29,6 @@ void shell_sort(int *array, size_t size);
 void counting_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
 void merge_rec(int *array, int *left, size_t left_size, int *right, size_t right_size);
+void swap_nodes(listint_t **h, listint_t **n1, listint_t *n2);
 
 #endif
